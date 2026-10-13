@@ -1,0 +1,1998 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>UR TRADER — Gold Trading Education</title>
+<meta name="description" content="UR TRADER: gold market analysis, technical education, trading lessons and an online community.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #fff;
+  --tx: #111;
+  --mu: #5c5c5c;
+  --gd: #b8902f;
+  --gl: #f7f0dc;
+  --cd: #fff;
+  --bd: #ececec;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #fff;
+    --tx: #111;
+  }
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 70px;
+}
+body {
+  margin: 0;
+  background: #fff;
+  color: var(--tx);
+  font: 16px/1.7 'Plus Jakarta Sans', 'Poppins', sans-serif;
+  letter-spacing: -0.01em;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+}
+.w {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+section {
+  padding: 72px 0;
+}
+h1, h2, h3 {
+  line-height: 1.25;
+  margin: 0 0 12px;
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+h2 {
+  font-size: clamp(1.4rem, 3vw, 2.1rem);
+  text-align: center;
+  text-transform: uppercase;
+}
+.sub {
+  color: var(--mu);
+  text-align: center;
+  max-width: 620px;
+  margin: 0 auto 32px;
+}
+header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: #ffffffee;
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--bd);
+  padding-top: env(safe-area-inset-top, 0px);
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+}
+.lg {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+.lg img {
+  height: 38px;
+  width: 38px;
+  object-fit: contain;
+}
+.mn {
+  display: flex;
+  gap: 22px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+.mn a {
+  color: var(--mu);
+  transition: color 0.2s;
+}
+.mn a:hover {
+  color: var(--gd);
+}
+#hb {
+  display: none;
+  background: none;
+  border: 0;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+.btn {
+  display: inline-block;
+  padding: 11px 26px;
+  border-radius: 999px;
+  border: 1.5px solid var(--tx);
+  font-weight: 600;
+  font-size: 0.90rem;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  background: #fff;
+  transition: all 0.25s ease;
+}
+.btn:hover {
+  border-color: var(--gd);
+  color: var(--gd);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(184, 144, 47, 0.2);
+}
+.gold {
+  background: linear-gradient(135deg, #c59f3f, #a98028);
+  border-color: var(--gd);
+  color: #fff;
+}
+.gold:hover {
+  background: linear-gradient(135deg, #ad8525, #8f6a19);
+  color: #fff;
+}
+.hero {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+.hero h1 {
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  letter-spacing: 0.05em;
+  font-weight: 800;
+}
+.hero h2 {
+  text-align: left;
+  font-size: 1.28rem;
+  color: var(--gd);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.pf {
+  aspect-ratio: 1;
+  border-radius: 24px;
+  background: var(--gl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 12px 40px #b8902f26;
+}
+.pf img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.pf span {
+  color: var(--gd);
+  font-size: 0.85rem;
+  padding: 20px;
+  text-align: center;
+}
+.grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+.card {
+  background: var(--cd);
+  border: 1px solid var(--bd);
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: 0 2px 12px #0000000a;
+  transition: 0.25s;
+}
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--gd);
+  box-shadow: 0 10px 26px #b8902f22;
+}
+.card svg {
+  width: 28px;
+  height: 28px;
+  stroke: var(--gd);
+  fill: none;
+  stroke-width: 1.6;
+}
+.card h3 {
+  font-size: 1rem;
+  margin-top: 10px;
+}
+.card p {
+  color: var(--mu);
+  font-size: 0.88rem;
+  margin: 0;
+}
+.soc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+}
+.so {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  border: 1px solid var(--bd);
+  border-radius: 999px;
+  font-size: 0.9rem;
+  transition: 0.25s;
+  background: #fff;
+}
+.so:hover {
+  border-color: var(--gd);
+  color: var(--gd);
+  transform: translateY(-3px);
+}
+.so svg {
+  width: 22px;
+  height: 22px;
+}
+.band {
+  background: var(--gl);
+  border-radius: 24px;
+  padding: 48px 24px;
+  text-align: center;
+}
+.band p {
+  max-width: 620px;
+  margin: 0 auto 22px;
+  color: #444;
+}
+.band img {
+  max-width: 100%;
+  border-radius: 16px;
+  margin-bottom: 20px;
+}
+.vd {
+  overflow: hidden;
+  padding: 0;
+}
+.th {
+  aspect-ratio: 16/9;
+  background: var(--gl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gd);
+  font-size: 2rem;
+}
+.th img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.vd h3 {
+  padding: 12px 16px;
+  font-size: 0.92rem;
+  margin: 0;
+}
+.ab {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 36px;
+  align-items: center;
+}
+form {
+  display: grid;
+  gap: 10px;
+  max-width: 520px;
+  margin: 24px auto 0;
+}
+input, textarea, select {
+  font: inherit;
+  padding: 10px 14px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  width: 100%;
+}
+.rv {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.7s, transform 0.7s;
+}
+.rv.in {
+  opacity: 1;
+  transform: none;
+}
+.hero > * {
+  animation: fi 0.8s both;
+}
+.hero > *:nth-child(2) {
+  animation-delay: 0.2s;
+}
+@keyframes fi {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+}
+footer {
+  border-top: 1px solid var(--bd);
+  padding: 28px 0;
+  text-align: center;
+  color: var(--mu);
+  font-size: 0.85rem;
+}
+#adm {
+  position: fixed;
+  right: 16px;
+  bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  z-index: 30;
+  display: block;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+}
+#pn {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  background: #fff;
+  overflow: auto;
+  display: none;
+  padding: 20px;
+}
+#pn .w {
+  max-width: 760px;
+}
+#pn fieldset {
+  border: 1px solid var(--bd);
+  border-radius: 14px;
+  margin: 0 0 16px;
+  padding: 14px;
+}
+#pn legend {
+  font-weight: 600;
+  color: var(--gd);
+}
+#pn label {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--mu);
+  margin: 8px 0 2px;
+}
+.row {
+  display: grid;
+  grid-template-columns: 1.1fr 2fr 0.6fr auto auto;
+  gap: 6px;
+  align-items: center;
+  margin-bottom: 6px;
+}
+.row.v {
+  grid-template-columns: 1fr 1.4fr auto auto auto auto;
+}
+.row input {
+  padding: 7px 9px;
+}
+.sm {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+}
+.hide {
+  display: none !important;
+}
+@media (max-width: 760px) {
+  .mn {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    padding: 0 20px;
+    gap: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s;
+    border-bottom: 1px solid var(--bd);
+  }
+  .mn.o {
+    max-height: 420px;
+  }
+  .mn a {
+    padding: 12px 0;
+  }
+  #hb {
+    display: block;
+  }
+  .hero, .ab {
+    grid-template-columns: 1fr;
+  }
+  .row, .row.v {
+    grid-template-columns: 1fr 1fr;
+  }
+  section {
+    padding: 48px 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+  .rv {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+</style>
+<script crossorigin src="https://unpkg.com/react@19/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@19/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel" data-presets="typescript,react">
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+
+
+const LOGO_BASE64 = "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAFoAWgDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD6oooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiig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";
+
+interface HighlightItem {
+  t: string;
+  d: string;
+}
+
+interface SocialItem {
+  k: string;
+  n: string;
+  l: string;
+  u: string;
+  on: number;
+  o: number;
+}
+
+interface VideoItem {
+  t: string;
+  u: string;
+  th: string;
+}
+
+interface SectionItem {
+  id: string;
+  on: number;
+}
+
+interface SiteConfig {
+  name: string;
+  logo: string;
+  photo: string;
+  hero: {
+    title: string;
+    head: string;
+    text: string;
+    b1: string;
+    b2: string;
+  };
+  hl: HighlightItem[];
+  edu: {
+    title: string;
+    text: string;
+    banner: string;
+    b1: string;
+    u1: string;
+    b2: string;
+    u2: string;
+    b3: string;
+    u3: string;
+  };
+  soc: SocialItem[];
+  vip: {
+    text: string;
+    invite: string;
+    phone: string;
+    chat: string;
+    desc: string;
+    banner: string;
+    btn: string;
+  };
+  yt: {
+    channel: string;
+    vids: VideoItem[];
+  };
+  about: {
+    text: string;
+    bio: string;
+    creds: string;
+  };
+  contact: {
+    email: string;
+    form: number;
+  };
+  sec: SectionItem[];
+}
+
+const DEFAULT_CONFIG: SiteConfig = {
+  name: 'UR TRADER',
+  logo: '',
+  photo: '',
+  hero: {
+    title: 'UR TRADER',
+    head: 'Learn Trading. Understand the Market. Build Your Knowledge.',
+    text: 'Explore gold market analysis, technical education, trading concepts and educational resources in one place.',
+    b1: 'Explore Trading Education',
+    b2: 'Watch YouTube Videos',
+  },
+  hl: [
+    { t: 'Gold Market Analysis', d: 'Market views and chart breakdowns.' },
+    { t: 'Technical Education', d: 'Learn how to read price charts.' },
+    { t: 'Trading Lessons', d: 'Step-by-step educational content.' },
+    { t: 'Online Community', d: 'Discussions with fellow learners.' },
+  ],
+  edu: {
+    title: 'LEARN AND GROW WITH UR TRADER',
+    text: 'Explore educational content covering market structure, support and resistance, price action, chart reading, risk awareness and trading discipline.',
+    banner: '',
+    b1: 'View Courses',
+    u1: '',
+    b2: 'Watch Latest Videos',
+    u2: '',
+    b3: 'Learn More',
+    u3: '',
+  },
+  soc: [
+    { k: 'youtube', n: 'YouTube', l: 'YouTube', u: 'https://youtube.com/@urtraders100?si=smG3uh2fuLHy4mrO', on: 1, o: 1 },
+    { k: 'whatsapp', n: 'WhatsApp Channel', l: 'WhatsApp Channel', u: 'https://whatsapp.com/channel/0029Vb7kPP0EKyZ9cL1mkO3x', on: 1, o: 2 },
+    { k: 'whatsapp', n: 'WhatsApp Number', l: 'WhatsApp Chat', u: 'https://wa.me/923066056536', on: 1, o: 3 },
+    { k: 'telegram', n: 'Telegram', l: 'Telegram', u: '', on: 1, o: 4 },
+    { k: 'facebook', n: 'Facebook', l: 'Facebook', u: 'https://www.facebook.com/urtrad?mibextid=rS40aB7S9Ucbxw6v', on: 1, o: 5 },
+    { k: 'instagram', n: 'Instagram', l: 'Instagram', u: 'https://www.instagram.com/urtrader100?dlrf=MXR0cnI0ZTBjMjN1dA==', on: 1, o: 6 },
+    { k: 'tiktok', n: 'TikTok', l: 'TikTok', u: 'https://www.tiktok.com/@urtraders100?_r=1&_t=ZS-9AVyzz2hPoU', on: 1, o: 7 },
+    { k: 'website', n: 'Website', l: 'Website', u: 'https://app.histromax.com/', on: 1, o: 8 },
+    { k: 'email', n: 'Email', l: 'Email', u: '', on: 1, o: 9 },
+  ],
+  vip: {
+    text: 'Join our community to access trading education, market discussions and available premium learning resources.',
+    invite: 'https://whatsapp.com/channel/0029Vb7kPP0EKyZ9cL1mkO3x',
+    phone: '+92 306 6056536',
+    chat: 'https://wa.me/923066056536',
+    desc: '',
+    banner: '',
+    btn: 'JOIN VIP GROUP',
+  },
+  yt: {
+    channel: 'https://youtube.com/@urtraders100?si=smG3uh2fuLHy4mrO',
+    vids: [],
+  },
+  about: {
+    text: 'UR TRADER is a trading education brand focused on helping learners understand gold market analysis, technical concepts, chart structure and disciplined decision-making.',
+    bio: '',
+    creds: '',
+  },
+  contact: {
+    email: '',
+    form: 1,
+  },
+  sec: [
+    { id: 'home', on: 1 },
+    { id: 'hl', on: 1 },
+    { id: 'trading', on: 1 },
+    { id: 'social', on: 1 },
+    { id: 'vip', on: 1 },
+    { id: 'videos', on: 1 },
+    { id: 'about', on: 1 },
+    { id: 'contact', on: 1 },
+  ],
+};
+
+const NAV_MAP: Record<string, string> = {
+  home: 'Home',
+  about: 'About',
+  trading: 'Trading Education',
+  videos: 'Videos',
+  social: 'Social Media',
+  vip: 'Join VIP Group',
+  contact: 'Contact',
+};
+
+const SOCIAL_ICONS: Record<string, React.ReactNode> = {
+  youtube: (
+    <svg viewBox="0 0 24 24">
+      <rect x="2" y="5" width="20" height="14" rx="4" fill="#f00" />
+      <path d="M10 9l5 3-5 3z" fill="#fff" />
+    </svg>
+  ),
+  whatsapp: (
+    <svg viewBox="0 0 24 24">
+      <path d="M12 2a10 10 0 00-8.6 15L2 22l5.1-1.3A10 10 0 1012 2z" fill="#25d366" />
+      <path d="M8.5 7.5c-.5.6-.8 1.5.2 3.200 1.100 1.900 2.700 3 4.600 3.700.9.3 1.800-.2 2-.9l-1.600-.9-.7.6c-1-.4-1.900-1.300-2.400-2.200l.6-.7-.8-1.700c-.3-.4-.9-.5-1.400-.1z" fill="#fff" />
+    </svg>
+  ),
+  telegram: (
+    <svg viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="10" fill="#229ed9" />
+      <path d="M5.500 11.800l11.500-4.500-2 9.500-3.200-2.400-1.800 1.700-.3-3.400 5.600-5-6.900 4.300z" fill="#fff" />
+    </svg>
+  ),
+  facebook: (
+    <svg viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="10" fill="#1877f2" />
+      <path d="M13.200 20v-6.500h2.200l.4-2.600h-2.600V9.300c0-.8.3-1.300 1.400-1.300h1.300V5.700c-.3 0-1.100-.1-2-.1-2 0-3.300 1.200-3.300 3.400v1.900H8.400v2.600h2.200V20z" fill="#fff" />
+    </svg>
+  ),
+  instagram: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#d6249f" strokeWidth="2">
+      <rect x="3" y="3" width="18" height="18" rx="5" />
+      <circle cx="12" cy="12" r="4" />
+      <circle cx="17.500" cy="6.500" r="1" fill="#d6249f" />
+    </svg>
+  ),
+  tiktok: (
+    <svg viewBox="0 0 24 24">
+      <path d="M16 3c.3 2.300 1.700 3.800 4 4v3.200c-1.500 0-2.900-.5-4-1.300v6.100A5.500 5.500 0 1110.500 9v3.300a2.300 2.300 0 102.300 2.300V3z" fill="#111" />
+    </svg>
+  ),
+  website: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#b8902f" strokeWidth="1.800">
+      <circle cx="12" cy="12" r="9" />
+      <path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18" />
+    </svg>
+  ),
+  email: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#b8902f" strokeWidth="1.800">
+      <rect x="3" y="5" width="18" height="14" rx="2" />
+      <path d="M3 7l9 6 9-6" />
+    </svg>
+  ),
+};
+
+const HIGHLIGHT_ICONS = [
+  (
+    <svg viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M3 17l6-6 4 4 8-8M15 7h6v6" />
+    </svg>
+  ),
+  (
+    <svg viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M4 20V10M10 20V4M16 20v-8M22 20H2" />
+    </svg>
+  ),
+  (
+    <svg viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M4 5h16v11H4zM8 21h8M12 16v5" />
+    </svg>
+  ),
+  (
+    <svg viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="9" cy="8" r="3" />
+      <circle cx="17" cy="9" r="2" />
+      <path d="M3 20c0-4 3-6 6-6s6 2 6 6M15 15c3 0 6 1 6 5" />
+    </svg>
+  ),
+];
+
+const isSafeUrl = (u: string) => /^(https?:\/\/|mailto:)/i.test(u || '');
+
+const mergeConfig = (base: SiteConfig, saved: any): SiteConfig => {
+  if (!saved || typeof saved !== 'object') return base;
+  return {
+    ...base,
+    ...saved,
+    hero: { ...base.hero, ...(saved.hero || {}) },
+    edu: { ...base.edu, ...(saved.edu || {}) },
+    vip: { ...base.vip, ...(saved.vip || {}) },
+    about: { ...base.about, ...(saved.about || {}) },
+    contact: { ...base.contact, ...(saved.contact || {}) },
+    yt: {
+      ...base.yt,
+      ...(saved.yt || {}),
+      vids: Array.isArray(saved.yt?.vids) ? saved.yt.vids : base.yt.vids,
+    },
+    hl: Array.isArray(saved.hl) && saved.hl.length ? saved.hl : base.hl,
+    soc: Array.isArray(saved.soc) && saved.soc.length ? saved.soc : base.soc,
+    sec: Array.isArray(saved.sec) && saved.sec.length ? saved.sec : base.sec,
+  };
+};
+
+function App() {
+  const [config, setConfig] = useState<SiteConfig>(() => {
+    try {
+      const saved = localStorage.getItem('ur_trader_site_config');
+      if (saved) {
+        return mergeConfig(DEFAULT_CONFIG, JSON.parse(saved));
+      }
+    } catch {
+      // ignore
+    }
+    return DEFAULT_CONFIG;
+  });
+
+  const [panelOpen, setPanelOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [statusMsg, setStatusMsg] = useState('');
+  const [contactName, setContactName] = useState('');
+  const [contactEmail, setContactEmail] = useState('');
+  const [contactMessage, setContactMessage] = useState('');
+  const [formError, setFormError] = useState('');
+
+  // 10-tap secret admin trigger with passcode abaidull77
+  const [passcodeModalOpen, setPasscodeModalOpen] = useState(false);
+  const [passcodeInput, setPasscodeInput] = useState('');
+  const [passcodeError, setPasscodeError] = useState('');
+  const [clickCount, setClickCount] = useState(0);
+  const clickTimeoutRef = useRef<number | null>(null);
+
+  const handleFooterClick = () => {
+    if (clickTimeoutRef.current) {
+      window.clearTimeout(clickTimeoutRef.current);
+    }
+    // Reset if no click for 5 seconds
+    clickTimeoutRef.current = window.setTimeout(() => {
+      setClickCount(0);
+    }, 5000);
+
+    const next = clickCount + 1;
+    if (next >= 10) {
+      setClickCount(0);
+      setPasscodeModalOpen(true);
+      setPasscodeError('');
+      setPasscodeInput('');
+    } else {
+      setClickCount(next);
+    }
+  };
+
+  const handlePasscodeSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (passcodeInput === 'abaidull77') {
+      setPasscodeModalOpen(false);
+      setPasscodeInput('');
+      setPasscodeError('');
+      setPanelOpen(true);
+    } else {
+      setPasscodeError('غلط کوڈ! درست پاس کوڈ درج کریں۔ / Incorrect passcode!');
+    }
+  };
+
+  // Scroll reveal observer
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add('in');
+            io.unobserve(e.target);
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+
+    const elements = document.querySelectorAll('.rv');
+    elements.forEach((el) => io.observe(el));
+
+    return () => io.disconnect();
+  }, [config, panelOpen]);
+
+  const compressImageFile = (file: File, maxWidth = 1000, quality = 0.82): Promise<string> => {
+    return new Promise((resolve) => {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const raw = e.target?.result as string;
+        const img = new Image();
+        img.onload = () => {
+          let w = img.width;
+          let h = img.height;
+          if (w > maxWidth) {
+            h = Math.round((h * maxWidth) / w);
+            w = maxWidth;
+          }
+          const canvas = document.createElement('canvas');
+          canvas.width = w;
+          canvas.height = h;
+          const ctx = canvas.getContext('2d');
+          if (!ctx) {
+            resolve(raw);
+            return;
+          }
+          ctx.drawImage(img, 0, 0, w, h);
+          resolve(canvas.toDataURL('image/jpeg', quality));
+        };
+        img.onerror = () => resolve(raw);
+        img.src = raw;
+      };
+      reader.onerror = () => resolve('');
+      reader.readAsDataURL(file);
+    });
+  };
+
+  // Load server config on startup and sync
+  useEffect(() => {
+    let isMounted = true;
+    async function initConfig() {
+      try {
+        const res = await fetch('/api/config');
+        if (res.ok) {
+          const serverData = await res.json();
+          if (isMounted && serverData && typeof serverData === 'object') {
+            const merged = mergeConfig(DEFAULT_CONFIG, serverData);
+            setConfig(merged);
+            try {
+              localStorage.setItem('ur_trader_site_config', JSON.stringify(merged));
+            } catch {}
+            return;
+          }
+        }
+      } catch (e) {
+        console.warn('Initial server config fetch error:', e);
+      }
+
+      // If server had no custom data, check if localStorage has custom data to sync to server
+      try {
+        const localSaved = localStorage.getItem('ur_trader_site_config');
+        if (localSaved) {
+          const parsed = JSON.parse(localSaved);
+          await fetch('/api/config', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ config: parsed, passcode: 'abaidull77' }),
+          });
+        }
+      } catch {}
+    }
+    initConfig();
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  // Save to both localStorage and server
+  const saveToServer = async (targetConfig?: SiteConfig) => {
+    const cfg = targetConfig || config;
+    try {
+      localStorage.setItem('ur_trader_site_config', JSON.stringify(cfg));
+    } catch {}
+
+    try {
+      const res = await fetch('/api/config', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ config: cfg, passcode: 'abaidull77' }),
+      });
+      if (res.ok) {
+        setStatusMsg('✓ پبلش اور لائیو محفوظ ہو گیا! (Published to Live Site ✓)');
+        setTimeout(() => setStatusMsg(''), 4000);
+        return true;
+      }
+    } catch (err: any) {
+      console.warn('Server sync notice:', err);
+    }
+    setStatusMsg('✓ براؤزر میں محفوظ ہو گیا (Saved locally ✓)');
+    setTimeout(() => setStatusMsg(''), 3000);
+    return false;
+  };
+
+  // Automatic real-time persistence: Whenever config changes, save immediately
+  useEffect(() => {
+    try {
+      localStorage.setItem('ur_trader_site_config', JSON.stringify(config));
+      document.title = (config.name || 'UR TRADER') + ' — Gold Trading Education';
+    } catch (err: any) {
+      console.warn('Auto-save storage warning:', err);
+    }
+  }, [config]);
+
+  const handleSave = () => {
+    saveToServer(config);
+  };
+
+  const handleExportConfig = () => {
+    try {
+      const dataStr = 'data:text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(config, null, 2));
+      const downloadAnchor = document.createElement('a');
+      downloadAnchor.setAttribute('href', dataStr);
+      downloadAnchor.setAttribute('download', 'ur-trader-config.json');
+      document.body.appendChild(downloadAnchor);
+      downloadAnchor.click();
+      downloadAnchor.remove();
+      setStatusMsg('✓ بیک اپ فائل ڈاؤنلوڈ ہو گئی (Backup downloaded)');
+      setTimeout(() => setStatusMsg(''), 3000);
+    } catch (err) {
+      setStatusMsg('Export failed');
+    }
+  };
+
+  const handleImportConfig = (file: File | undefined) => {
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = async (e) => {
+      try {
+        const parsed = JSON.parse(e.target?.result as string);
+        const merged = mergeConfig(DEFAULT_CONFIG, parsed);
+        setConfig(merged);
+        await saveToServer(merged);
+        setStatusMsg('✓ بیک اپ بحال اور پبلش ہو گیا (Backup restored & published)');
+      } catch (err) {
+        setStatusMsg('Invalid backup file');
+      }
+    };
+    reader.readAsText(file);
+  };
+
+  const updatePath = (path: string, value: any) => {
+    setConfig((prev) => {
+      const next = JSON.parse(JSON.stringify(prev));
+      const parts = path.split('.');
+      let obj = next;
+      for (let i = 0; i < parts.length - 1; i++) {
+        obj = obj[parts[i]];
+      }
+      const last = parts[parts.length - 1];
+      obj[last] = typeof obj[last] === 'number' ? Number(value) : value;
+      return next;
+    });
+    setStatusMsg('✓ خودکار محفوظ (Auto-saved)');
+    setTimeout(() => {
+      setStatusMsg((curr) => (curr === '✓ خودکار محفوظ (Auto-saved)' ? '' : curr));
+    }, 2000);
+  };
+
+  const handleFileUpload = async (path: string, file: File | undefined) => {
+    if (!file) return;
+    setStatusMsg('تصویر پراسیس ہو رہی ہے... (Processing image...)');
+    try {
+      const optimizedDataUrl = await compressImageFile(file);
+      if (optimizedDataUrl) {
+        updatePath(path, optimizedDataUrl);
+        setStatusMsg('✓ تصویر محفوظ اور لائیو ہو گئی (Image saved & live)');
+        setTimeout(() => setStatusMsg(''), 3000);
+      }
+    } catch (err) {
+      setStatusMsg('Image upload error');
+    }
+  };
+
+  const getActiveSocials = () => {
+    return config.soc
+      .filter((s) => s.on && isSafeUrl(s.k === 'email' && s.u && !/^mailto:/i.test(s.u) ? 'mailto:' + s.u : s.u))
+      .sort((a, b) => a.o - b.o);
+  };
+
+  const getSocialUrl = (s: SocialItem) => {
+    if (s.k === 'email' && !/^(mailto:|https?:)/i.test(s.u)) {
+      return 'mailto:' + s.u;
+    }
+    return s.u;
+  };
+
+  const handleContactSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!contactName.trim() || !contactMessage.trim() || !/^\S+@\S+\.\S+$/.test(contactEmail.trim())) {
+      setFormError('Please enter your name, a valid email and a message.');
+      return;
+    }
+    setFormError('');
+    const base = config.vip.chat;
+    const textParam = `Hi, I'm ${contactName.trim()} (${contactEmail.trim()}). ${contactMessage.trim()}`;
+    const url = base + (base.includes('?') ? '&' : '?') + 'text=' + encodeURIComponent(textParam);
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
+
+  const moveItem = (arrKey: 'vids' | 'sec', index: number, direction: number) => {
+    setConfig((prev) => {
+      const next = JSON.parse(JSON.stringify(prev));
+      if (arrKey === 'vids') {
+        const arr = next.yt.vids;
+        const target = index + direction;
+        if (target >= 0 && target < arr.length) {
+          [arr[index], arr[target]] = [arr[target], arr[index]];
+        }
+      } else {
+        const arr = next.sec;
+        const target = index + direction;
+        if (target >= 0 && target < arr.length) {
+          [arr[index], arr[target]] = [arr[target], arr[index]];
+        }
+      }
+      return next;
+    });
+    setStatusMsg('✓ ترتیب تبدیل و خودکار محفوظ (Order updated & auto-saved)');
+    setTimeout(() => setStatusMsg(''), 2500);
+  };
+
+  const addVideo = () => {
+    setConfig((prev) => {
+      const next = JSON.parse(JSON.stringify(prev));
+      next.yt.vids.push({ t: '', u: '', th: '' });
+      return next;
+    });
+    setStatusMsg('✓ ویڈیو شامل اور خودکار محفوظ (Video added & auto-saved)');
+    setTimeout(() => setStatusMsg(''), 2500);
+  };
+
+  const removeVideo = (index: number) => {
+    setConfig((prev) => {
+      const next = JSON.parse(JSON.stringify(prev));
+      next.yt.vids.splice(index, 1);
+      return next;
+    });
+    setStatusMsg('✓ ویڈیو حذف اور خودکار محفوظ (Video removed & auto-saved)');
+    setTimeout(() => setStatusMsg(''), 2500);
+  };
+
+  const activeNavSections = config.sec.filter((s) => s.on && NAV_MAP[s.id] && s.id !== 'hl');
+  const photoNode = config.photo ? (
+    <img src={config.photo} alt={`${config.name} profile photo`} />
+  ) : (
+    <span>Profile photo — upload in Admin settings</span>
+  );
+
+  return (
+    <div ref={containerRef}>
+      {/* Header */}
+      <header>
+        <div className="w">
+          <nav>
+            <a href="#home" className="lg">
+              <img
+                id="lgo"
+                alt="UR TRADER logo"
+                src={config.logo || LOGO_BASE64}
+              />
+              <span id="nm">{config.name}</span>
+            </a>
+            <button
+              id="hb"
+              aria-label="Menu"
+              aria-expanded={mobileMenuOpen}
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              ☰
+            </button>
+            <div className={`mn ${mobileMenuOpen ? 'o' : ''}`} id="mn">
+              {activeNavSections.map((s) => (
+                <a
+                  key={s.id}
+                  href={`#${s.id}`}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {NAV_MAP[s.id]}
+                </a>
+              ))}
+            </div>
+          </nav>
+        </div>
+      </header>
+
+      {/* Main Content Rendered According to Section Order & Visibility */}
+      <main id="main">
+        {config.sec.map((secItem) => {
+          if (!secItem.on) return null;
+
+          if (secItem.id === 'home') {
+            return (
+              <section id="home" key="home">
+                <div className="w hero">
+                  <div>
+                    <h1>{config.hero.title}</h1>
+                    <h2>{config.hero.head}</h2>
+                    <p>{config.hero.text}</p>
+                    <p>
+                      <a className="btn gold" href="#trading">
+                        {config.hero.b1}
+                      </a>{' '}
+                      {isSafeUrl(config.yt.channel) ? (
+                        <a
+                          className="btn"
+                          href={config.yt.channel}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {config.hero.b2}
+                        </a>
+                      ) : (
+                        <a className="btn" href="#videos">
+                          {config.hero.b2}
+                        </a>
+                      )}
+                    </p>
+                  </div>
+                  <div className="pf">{photoNode}</div>
+                </div>
+              </section>
+            );
+          }
+
+          if (secItem.id === 'hl') {
+            return (
+              <section style={{ padding: '0 0 40px' }} key="hl">
+                <div className="w grid rv">
+                  {config.hl.map((item, idx) => (
+                    <div className="card" key={idx}>
+                      {HIGHLIGHT_ICONS[idx % 4]}
+                      <h3>{item.t}</h3>
+                      <p>{item.d}</p>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            );
+          }
+
+          if (secItem.id === 'trading') {
+            return (
+              <section id="trading" key="trading">
+                <div className="w">
+                  <h2>{config.edu.title}</h2>
+                  <p className="sub">{config.edu.text}</p>
+                  <div className="band rv">
+                    {config.edu.banner && (
+                      <img src={config.edu.banner} alt="Course banner" />
+                    )}
+                    <p>
+                      {[
+                        [config.edu.b1, config.edu.u1],
+                        [config.edu.b2, config.edu.u2 || config.yt.channel],
+                        [config.edu.b3, config.edu.u3],
+                      ].map(([label, url], idx) =>
+                        isSafeUrl(url) ? (
+                          <a
+                            key={idx}
+                            className="btn gold"
+                            href={url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ margin: '0 4px 6px' }}
+                          >
+                            {label}
+                          </a>
+                        ) : null
+                      )}
+                    </p>
+                  </div>
+                </div>
+              </section>
+            );
+          }
+
+          if (secItem.id === 'social') {
+            const socials = getActiveSocials();
+            return (
+              <section id="social" key="social">
+                <div className="w">
+                  <h2>CONNECT WITH {config.name}</h2>
+                  <p className="sub">
+                    Follow our social platforms for trading education, market updates and new content.
+                  </p>
+                  <div className="soc rv">
+                    {socials.map((s, idx) => (
+                      <a
+                        key={idx}
+                        className="so"
+                        href={getSocialUrl(s)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={s.n}
+                      >
+                        {SOCIAL_ICONS[s.k] || SOCIAL_ICONS.website}
+                        {s.l || s.n}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </section>
+            );
+          }
+
+          if (secItem.id === 'vip') {
+            return (
+              <section id="vip" key="vip">
+                <div className="w">
+                  <div className="band rv">
+                    {config.vip.banner && (
+                      <img src={config.vip.banner} alt="VIP banner" />
+                    )}
+                    <h2>JOIN THE {config.name} VIP COMMUNITY</h2>
+                    <p>{config.vip.text}</p>
+                    {config.vip.desc && <p>{config.vip.desc}</p>}
+                    <p>
+                      {isSafeUrl(config.vip.invite) && (
+                        <a
+                          className="btn gold"
+                          href={config.vip.invite}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {config.vip.btn}
+                        </a>
+                      )}{' '}
+                      {isSafeUrl(config.vip.chat) && (
+                        <a
+                          className="btn"
+                          href={config.vip.chat}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Chat on WhatsApp
+                        </a>
+                      )}
+                    </p>
+                    {config.vip.phone && (
+                      <p style={{ margin: 0, color: 'var(--mu)' }}>
+                        WhatsApp: {config.vip.phone}
+                      </p>
+                    )}
+                  </div>
+                </div>
+              </section>
+            );
+          }
+
+          if (secItem.id === 'videos') {
+            const safeVideos = config.yt.vids.filter((v) => isSafeUrl(v.u));
+            return (
+              <section id="videos" key="videos">
+                <div className="w">
+                  <h2>WATCH {config.name} VIDEOS</h2>
+                  <p className="sub">
+                    {isSafeUrl(config.yt.channel) && (
+                      <a
+                        className="btn gold"
+                        href={config.yt.channel}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Visit YouTube Channel
+                      </a>
+                    )}
+                  </p>
+                  <div className="grid rv">
+                    {safeVideos.length > 0 ? (
+                      safeVideos.map((v, idx) => (
+                        <a
+                          key={idx}
+                          className="card vd"
+                          href={v.u}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <div className="th">
+                            {v.th ? (
+                              <img src={v.th} alt="" loading="lazy" />
+                            ) : (
+                              '▶'
+                            )}
+                          </div>
+                          <h3>{v.t || 'Video'}</h3>
+                        </a>
+                      ))
+                    ) : (
+                      <p className="sub" style={{ gridColumn: '1/-1' }}>
+                        Featured videos will appear here once added in Admin settings.
+                      </p>
+                    )}
+                  </div>
+                </div>
+              </section>
+            );
+          }
+
+          if (secItem.id === 'about') {
+            const activeSocials = getActiveSocials().slice(0, 6);
+            return (
+              <section id="about" key="about">
+                <div className="w">
+                  <h2>ABOUT {config.name}</h2>
+                  <div className="ab rv" style={{ marginTop: '28px' }}>
+                    <div className="pf">{photoNode}</div>
+                    <div>
+                      <p>{config.about.text}</p>
+                      {config.about.bio && <p>{config.about.bio}</p>}
+                      {config.about.creds && (
+                        <p>
+                          <b>Experience &amp; education:</b> {config.about.creds}
+                        </p>
+                      )}
+                      <div className="soc" style={{ justifyContent: 'flex-start' }}>
+                        {activeSocials.map((s, idx) => (
+                          <a
+                            key={idx}
+                            className="so"
+                            style={{ padding: '8px' }}
+                            href={getSocialUrl(s)}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={s.n}
+                          >
+                            {SOCIAL_ICONS[s.k] || SOCIAL_ICONS.website}
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            );
+          }
+
+          if (secItem.id === 'contact') {
+            return (
+              <section id="contact" key="contact">
+                <div className="w">
+                  <h2>CONTACT {config.name}</h2>
+                  <p className="sub">
+                    {isSafeUrl(config.vip.chat) && (
+                      <a
+                        className="btn gold"
+                        href={config.vip.chat}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        WhatsApp
+                      </a>
+                    )}{' '}
+                    {config.contact.email && (
+                      <a className="btn" href={`mailto:${config.contact.email}`}>
+                        {config.contact.email}
+                      </a>
+                    )}
+                  </p>
+                  {Boolean(config.contact.form) && isSafeUrl(config.vip.chat) && (
+                    <form id="cf" onSubmit={handleContactSubmit} noValidate>
+                      <input
+                        name="n"
+                        placeholder="Your name"
+                        required
+                        maxLength={80}
+                        value={contactName}
+                        onChange={(e) => setContactName(e.target.value)}
+                      />
+                      <input
+                        name="e"
+                        type="email"
+                        placeholder="Your email"
+                        required
+                        maxLength={120}
+                        value={contactEmail}
+                        onChange={(e) => setContactEmail(e.target.value)}
+                      />
+                      <textarea
+                        name="m"
+                        rows={4}
+                        placeholder="Message"
+                        required
+                        maxLength={1000}
+                        value={contactMessage}
+                        onChange={(e) => setContactMessage(e.target.value)}
+                      />
+                      <button className="btn gold" type="submit">
+                        Send via WhatsApp
+                      </button>
+                      {formError && (
+                        <small id="fe" style={{ color: '#b00' }}>
+                          {formError}
+                        </small>
+                      )}
+                    </form>
+                  )}
+                </div>
+              </section>
+            );
+          }
+
+          return null;
+        })}
+      </main>
+
+      {/* Footer */}
+      <footer>
+        <div className="w">
+          <span
+            id="ft"
+            onClick={handleFooterClick}
+            style={{ cursor: 'pointer', userSelect: 'none' }}
+            title="UR TRADER"
+          >
+            © {new Date().getFullYear()} {config.name}.
+          </span>
+          <br />
+          Educational content only. Trading involves risk; nothing here is financial advice or a promise of profit.
+        </div>
+      </footer>
+
+      {/* Secret Passcode Unlock Modal */}
+      {passcodeModalOpen && (
+        <div
+          style={{
+            position: 'fixed',
+            inset: 0,
+            zIndex: 9999,
+            background: 'rgba(0, 0, 0, 0.75)',
+            backdropFilter: 'blur(8px)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '20px',
+          }}
+          onClick={() => {
+            setPasscodeModalOpen(false);
+            setPasscodeInput('');
+            setPasscodeError('');
+          }}
+        >
+          <div
+            style={{
+              background: '#ffffff',
+              borderRadius: '24px',
+              maxWidth: '380px',
+              width: '100%',
+              padding: '30px 24px',
+              border: '2px solid var(--gd)',
+              boxShadow: '0 20px 50px rgba(0, 0, 0, 0.35)',
+              textAlign: 'center',
+            }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div style={{ fontSize: '2.6rem', marginBottom: '10px' }}>🔐</div>
+            <h3
+              style={{
+                fontFamily: 'Cinzel, serif',
+                fontSize: '1.4rem',
+                margin: '0 0 6px',
+                color: 'var(--tx)',
+                letterSpacing: '0.04em',
+              }}
+            >
+              Admin Security
+            </h3>
+            <p
+              style={{
+                color: 'var(--mu)',
+                fontSize: '0.88rem',
+                margin: '0 0 20px',
+                lineHeight: 1.5,
+              }}
+            >
+              ایڈمن پینل کھولنے کے لیے خفیہ کوڈ درج کریں
+            </p>
+
+            <form onSubmit={handlePasscodeSubmit}>
+              <input
+                type="password"
+                autoFocus
+                placeholder="Enter passcode..."
+                value={passcodeInput}
+                onChange={(e) => {
+                  setPasscodeInput(e.target.value);
+                  setPasscodeError('');
+                }}
+                style={{
+                  textAlign: 'center',
+                  fontSize: '1.1rem',
+                  letterSpacing: '0.15em',
+                  padding: '12px 14px',
+                  borderRadius: '12px',
+                  border: passcodeError ? '1.5px solid #e53e3e' : '1.5px solid #dcdcdc',
+                  width: '100%',
+                  marginBottom: '10px',
+                  outline: 'none',
+                }}
+              />
+
+              {passcodeError && (
+                <div
+                  style={{
+                    color: '#e53e3e',
+                    fontSize: '0.82rem',
+                    marginBottom: '14px',
+                    fontWeight: 600,
+                  }}
+                >
+                  {passcodeError}
+                </div>
+              )}
+
+              <div style={{ display: 'flex', gap: '10px', marginTop: '10px' }}>
+                <button
+                  type="submit"
+                  className="btn gold"
+                  style={{ flex: 1, padding: '11px', fontSize: '0.92rem' }}
+                >
+                  Unlock / تصدیق
+                </button>
+                <button
+                  type="button"
+                  className="btn"
+                  style={{ flex: 1, padding: '11px', fontSize: '0.92rem' }}
+                  onClick={() => {
+                    setPasscodeModalOpen(false);
+                    setPasscodeInput('');
+                    setPasscodeError('');
+                  }}
+                >
+                  Cancel / بند
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
+
+      {/* Admin Settings Modal Panel */}
+      {panelOpen && (
+        <div id="pn" style={{ display: 'block' }}>
+          <div className="w">
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                flexWrap: 'wrap',
+                gap: '12px',
+                marginBottom: '16px',
+                paddingBottom: '12px',
+                borderBottom: '1px solid var(--bd)',
+              }}
+            >
+              <h2 style={{ textAlign: 'left', margin: 0, fontSize: '1.5rem' }}>
+                Admin Settings / ایڈمن سیٹنگز
+              </h2>
+              <span
+                style={{
+                  fontSize: '0.82rem',
+                  padding: '5px 14px',
+                  borderRadius: '999px',
+                  background: '#ecfdf5',
+                  color: '#047857',
+                  border: '1px solid #a7f3d0',
+                  fontWeight: 600,
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                }}
+              >
+                <span
+                  style={{
+                    width: '8px',
+                    height: '8px',
+                    borderRadius: '50%',
+                    background: '#10b981',
+                    display: 'inline-block',
+                  }}
+                />
+                ⚡ Real-time Auto-Save Active (فوری خودکار محفوظ)
+              </span>
+            </div>
+            <div id="pf">
+              {/* General */}
+              <fieldset>
+                <legend>General</legend>
+                <label>Website name</label>
+                <input
+                  value={config.name}
+                  onChange={(e) => updatePath('name', e.target.value)}
+                />
+
+                <label>Logo upload</label>
+                <input
+                  type="file"
+                  accept="image/*"
+                  onChange={(e) => handleFileUpload('logo', e.target.files?.[0])}
+                />
+                <small>Select an image to replace website logo</small>
+
+                <label>Profile photo upload</label>
+                <input
+                  type="file"
+                  accept="image/*"
+                  onChange={(e) => handleFileUpload('photo', e.target.files?.[0])}
+                />
+                <small>Select an image for hero &amp; about cards</small>
+
+                <label>Hero title</label>
+                <input
+                  value={config.hero.title}
+                  onChange={(e) => updatePath('hero.title', e.target.value)}
+                />
+
+                <label>Hero headline</label>
+                <input
+                  value={config.hero.head}
+                  onChange={(e) => updatePath('hero.head', e.target.value)}
+                />
+
+                <label>Hero description</label>
+                <input
+                  value={config.hero.text}
+                  onChange={(e) => updatePath('hero.text', e.target.value)}
+                />
+
+                <label>Hero button 1 label</label>
+                <input
+                  value={config.hero.b1}
+                  onChange={(e) => updatePath('hero.b1', e.target.value)}
+                />
+
+                <label>Hero button 2 label</label>
+                <input
+                  value={config.hero.b2}
+                  onChange={(e) => updatePath('hero.b2', e.target.value)}
+                />
+              </fieldset>
+
+              {/* Highlights */}
+              <fieldset>
+                <legend>Highlights (text only — no invented stats)</legend>
+                {config.hl.map((item, idx) => (
+                  <div key={idx} style={{ marginBottom: '10px' }}>
+                    <label>Title {idx + 1}</label>
+                    <input
+                      value={item.t}
+                      onChange={(e) => updatePath(`hl.${idx}.t`, e.target.value)}
+                    />
+                    <label>Text</label>
+                    <input
+                      value={item.d}
+                      onChange={(e) => updatePath(`hl.${idx}.d`, e.target.value)}
+                    />
+                  </div>
+                ))}
+              </fieldset>
+
+              {/* Trading Education */}
+              <fieldset>
+                <legend>Trading education / courses</legend>
+                <label>Title</label>
+                <input
+                  value={config.edu.title}
+                  onChange={(e) => updatePath('edu.title', e.target.value)}
+                />
+                <label>Text</label>
+                <input
+                  value={config.edu.text}
+                  onChange={(e) => updatePath('edu.text', e.target.value)}
+                />
+
+                <label>Course banner</label>
+                <input
+                  type="file"
+                  accept="image/*"
+                  onChange={(e) => handleFileUpload('edu.banner', e.target.files?.[0])}
+                />
+
+                <label>Button 1 label</label>
+                <input
+                  value={config.edu.b1}
+                  onChange={(e) => updatePath('edu.b1', e.target.value)}
+                />
+                <label>Button 1 URL</label>
+                <input
+                  value={config.edu.u1}
+                  onChange={(e) => updatePath('edu.u1', e.target.value)}
+                />
+
+                <label>Button 2 label</label>
+                <input
+                  value={config.edu.b2}
+                  onChange={(e) => updatePath('edu.b2', e.target.value)}
+                />
+                <label>Button 2 URL</label>
+                <input
+                  value={config.edu.u2}
+                  onChange={(e) => updatePath('edu.u2', e.target.value)}
+                />
+
+                <label>Button 3 label</label>
+                <input
+                  value={config.edu.b3}
+                  onChange={(e) => updatePath('edu.b3', e.target.value)}
+                />
+                <label>Button 3 URL</label>
+                <input
+                  value={config.edu.u3}
+                  onChange={(e) => updatePath('edu.u3', e.target.value)}
+                />
+              </fieldset>
+
+              {/* Social Links */}
+              <fieldset>
+                <legend>Social links (empty URL = hidden)</legend>
+                {config.soc.map((s, idx) => (
+                  <div className="row" key={idx}>
+                    <input
+                      value={s.l}
+                      onChange={(e) => updatePath(`soc.${idx}.l`, e.target.value)}
+                      aria-label="Label"
+                      placeholder="Label"
+                    />
+                    <input
+                      value={s.u}
+                      onChange={(e) => updatePath(`soc.${idx}.u`, e.target.value)}
+                      placeholder={`${s.n} URL`}
+                      aria-label="URL"
+                    />
+                    <input
+                      type="number"
+                      value={s.o}
+                      onChange={(e) => updatePath(`soc.${idx}.o`, e.target.value)}
+                      aria-label="Order"
+                    />
+                    <label style={{ margin: 0, display: 'flex', alignItems: 'center', gap: '4px' }}>
+                      <input
+                        type="checkbox"
+                        checked={Boolean(s.on)}
+                        onChange={(e) => updatePath(`soc.${idx}.on`, e.target.checked ? 1 : 0)}
+                        style={{ width: 'auto' }}
+                      />{' '}
+                      on
+                    </label>
+                  </div>
+                ))}
+              </fieldset>
+
+              {/* VIP Group */}
+              <fieldset>
+                <legend>VIP group &amp; WhatsApp</legend>
+                <label>Button label</label>
+                <input
+                  value={config.vip.btn}
+                  onChange={(e) => updatePath('vip.btn', e.target.value)}
+                />
+                <label>Description</label>
+                <input
+                  value={config.vip.text}
+                  onChange={(e) => updatePath('vip.text', e.target.value)}
+                />
+                <label>Extra description</label>
+                <input
+                  value={config.vip.desc}
+                  onChange={(e) => updatePath('vip.desc', e.target.value)}
+                />
+                <label>WhatsApp group/channel invitation link</label>
+                <input
+                  value={config.vip.invite}
+                  onChange={(e) => updatePath('vip.invite', e.target.value)}
+                />
+                <label>WhatsApp number (shown)</label>
+                <input
+                  value={config.vip.phone}
+                  onChange={(e) => updatePath('vip.phone', e.target.value)}
+                />
+                <label>WhatsApp direct chat link</label>
+                <input
+                  value={config.vip.chat}
+                  onChange={(e) => updatePath('vip.chat', e.target.value)}
+                />
+                <label>VIP banner</label>
+                <input
+                  type="file"
+                  accept="image/*"
+                  onChange={(e) => handleFileUpload('vip.banner', e.target.files?.[0])}
+                />
+              </fieldset>
+
+              {/* YouTube */}
+              <fieldset>
+                <legend>YouTube</legend>
+                <label>Channel URL</label>
+                <input
+                  value={config.yt.channel}
+                  onChange={(e) => updatePath('yt.channel', e.target.value)}
+                />
+                <div id="vl">
+                  {config.yt.vids.map((v, idx) => (
+                    <div className="row v" key={idx}>
+                      <input
+                        value={v.t}
+                        placeholder="Title"
+                        onChange={(e) => updatePath(`yt.vids.${idx}.t`, e.target.value)}
+                      />
+                      <input
+                        value={v.u}
+                        placeholder="Video URL"
+                        onChange={(e) => updatePath(`yt.vids.${idx}.u`, e.target.value)}
+                      />
+                      <button className="sm" onClick={() => moveItem('vids', idx, -1)}>
+                        ↑
+                      </button>
+                      <button className="sm" onClick={() => moveItem('vids', idx, 1)}>
+                        ↓
+                      </button>
+                      <button className="sm" onClick={() => removeVideo(idx)}>
+                        ✕
+                      </button>
+                      <input
+                        type="file"
+                        accept="image/*"
+                        title="Thumbnail"
+                        onChange={(e) => handleFileUpload(`yt.vids.${idx}.th`, e.target.files?.[0])}
+                      />
+                    </div>
+                  ))}
+                </div>
+                <button className="sm" style={{ marginTop: '8px' }} onClick={addVideo}>
+                  + Add video
+                </button>
+              </fieldset>
+
+              {/* About & Contact */}
+              <fieldset>
+                <legend>About &amp; contact</legend>
+                <label>About text</label>
+                <input
+                  value={config.about.text}
+                  onChange={(e) => updatePath('about.text', e.target.value)}
+                />
+                <label>Biography</label>
+                <input
+                  value={config.about.bio}
+                  onChange={(e) => updatePath('about.bio', e.target.value)}
+                />
+                <label>Real experience / qualifications (leave blank if none)</label>
+                <input
+                  value={config.about.creds}
+                  onChange={(e) => updatePath('about.creds', e.target.value)}
+                />
+                <label>Contact email</label>
+                <input
+                  value={config.contact.email}
+                  onChange={(e) => updatePath('contact.email', e.target.value)}
+                />
+                <label style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                  <input
+                    type="checkbox"
+                    checked={Boolean(config.contact.form)}
+                    onChange={(e) => updatePath('contact.form', e.target.checked ? 1 : 0)}
+                    style={{ width: 'auto' }}
+                  />{' '}
+                  Show contact form
+                </label>
+              </fieldset>
+
+              {/* Sections (order & visibility) */}
+              <fieldset>
+                <legend>Sections (order &amp; visibility)</legend>
+                {config.sec.map((s, idx) => (
+                  <div
+                    className="row v"
+                    key={idx}
+                    style={{ gridTemplateColumns: 'auto 1fr auto auto' }}
+                  >
+                    <input
+                      type="checkbox"
+                      checked={Boolean(s.on)}
+                      onChange={(e) => updatePath(`sec.${idx}.on`, e.target.checked ? 1 : 0)}
+                      style={{ width: 'auto' }}
+                    />
+                    <span>{s.id}</span>
+                    <button className="sm" onClick={() => moveItem('sec', idx, -1)}>
+                      ↑
+                    </button>
+                    <button className="sm" onClick={() => moveItem('sec', idx, 1)}>
+                      ↓
+                    </button>
+                  </div>
+                ))}
+              </fieldset>
+            </div>
+
+            {/* Bottom buttons */}
+            <div
+              style={{
+                position: 'sticky',
+                bottom: 0,
+                background: '#fff',
+                padding: '14px 0',
+                borderTop: '1.5px solid var(--bd)',
+                display: 'flex',
+                flexWrap: 'wrap',
+                alignItems: 'center',
+                gap: '10px',
+              }}
+            >
+              <button
+                className="btn gold"
+                id="sv"
+                onClick={handleSave}
+                style={{ padding: '10px 22px', fontSize: '0.92rem' }}
+              >
+                💾 Publish Live (ویب سائٹ پر پبلش کریں)
+              </button>
+
+              <button
+                className="btn"
+                onClick={handleExportConfig}
+                title="Download backup JSON"
+                style={{ padding: '9px 16px', fontSize: '0.86rem' }}
+              >
+                📥 Export Backup
+              </button>
+
+              <label
+                className="btn"
+                style={{ padding: '9px 16px', fontSize: '0.86rem', margin: 0, cursor: 'pointer' }}
+                title="Upload backup JSON"
+              >
+                📤 Import Backup
+                <input
+                  type="file"
+                  accept=".json,application/json"
+                  style={{ display: 'none' }}
+                  onChange={(e) => handleImportConfig(e.target.files?.[0])}
+                />
+              </label>
+
+              <button
+                className="btn"
+                id="cl"
+                onClick={() => setPanelOpen(false)}
+                style={{ padding: '9px 16px', fontSize: '0.86rem' }}
+              >
+                Close / بند
+              </button>
+
+              <button
+                className="btn"
+                style={{ marginLeft: 'auto', padding: '9px 16px', fontSize: '0.84rem' }}
+                onClick={() => {
+                  if (window.confirm('Reset all settings to default UR TRADER template?')) {
+                    setConfig(DEFAULT_CONFIG);
+                    localStorage.removeItem('ur_trader_site_config');
+                    saveToServer(DEFAULT_CONFIG);
+                    setStatusMsg('Reset to default');
+                  }
+                }}
+              >
+                Reset Default
+              </button>
+
+              {statusMsg && (
+                <div
+                  id="ms"
+                  style={{
+                    width: '100%',
+                    marginTop: '4px',
+                    fontWeight: 600,
+                    color: 'var(--gd)',
+                    fontSize: '0.88rem',
+                  }}
+                >
+                  {statusMsg}
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+</script>
+<script type="text/babel" data-presets="react">
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(React.createElement(App));
+</script>
+</body>
+</html>
